@@ -7,7 +7,7 @@ var tick = function(startGeneration) {
   });
 
   // Find and combine the new cells with the survivors
-  var newCells = nextGeneration.map(function(el) {
+  var newCells = startGeneration.map(function(el) {
     // get the neighbours and check if they can become live
     // returns an array of viable neighbours
     return getNeighbours(el).filter(function(item) {

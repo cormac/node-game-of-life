@@ -6,17 +6,15 @@
 var expect = require('chai').expect,
     gol = require('../index.js'),
     countNeighbours = gol.countNeighbours,
-    unique          = gol.unique,
     tick            = gol.tick,
-    xyComparator    = gol.xyComparator,
     getNeighbours   = gol.getNeighbours;
 
 describe('game of life test suite', function() {
   var startGeneration = [
-    {x: 1, y: 0},               // 0 1 0 0
-    {x: 1, y: 1},               // 0 1 0 0
-    {x: 0, y: 2}, {x: 1, y: 2}, // 1 1 0 0
-    {x: 0, y: 3}, {x: 1, y: 3}  // 1 1 0 0
+    {x: 1, y: 0},                             // 0 1 0 0
+    {x: 1, y: 1}, {x: 4, y: 1},               // 0 1 0 0 1
+    {x: 0, y: 2}, {x: 1, y: 2}, {x: 5, y: 2}, // 1 1 0 0 0 1
+    {x: 0, y: 3}, {x: 1, y: 3}, {x: 3, y: 3}  // 1 1 0 1 0
   ];
 
 
@@ -54,6 +52,10 @@ describe('game of life test suite', function() {
   it('should generate a new cell if surrounded by three live cells only', function(){
     var elements = tick(startGeneration).filter(function(cell) {
       return cell.x === 2 && cell.y === 1;
+    });
+    expect(elements.length).to.equal(1);
+    elements = tick(startGeneration).filter(function(cell) {
+      return cell.x === 4 && cell.y === 2;
     });
     expect(elements.length).to.equal(1);
   });
