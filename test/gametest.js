@@ -4,7 +4,7 @@
 //Any dead cell with exactly three live neighbours becomes a live cell, as if by reproduction.
 
 var expect = require('chai').expect,
-    gol = require('../index.js'),
+    gol = require('../src/index.js'),
     countNeighbours = gol.countNeighbours,
     tick            = gol.tick,
     getNeighbours   = gol.getNeighbours;

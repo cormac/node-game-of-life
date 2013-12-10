@@ -89,7 +89,5 @@ var getNeighbours = function(el) {
 module.exports = {
   tick           : tick,
   countNeighbours: countNeighbours,
-  getNeighbours  : getNeighbours,
-  unique         : unique,
-  xyComparator   : xyComparator
+  getNeighbours  : getNeighbours
 };

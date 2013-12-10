@@ -4,7 +4,8 @@
   "description": "game of life solution",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --reporter spec"
+    "test": "mocha --reporter spec",
+    "build": "browserify src/main.js > dist/build.js"
   },
   "keywords": [
     "game",
